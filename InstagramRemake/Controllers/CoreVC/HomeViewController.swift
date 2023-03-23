@@ -7,6 +7,8 @@
 
 import UIKit
 
+//home VC for the user with posts
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {

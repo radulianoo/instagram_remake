@@ -6,3 +6,4 @@
 //
 
 import Foundation
+//for creating hapticst when an interaction with the app is made

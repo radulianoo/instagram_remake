@@ -33,6 +33,7 @@
 		EC19D8BD29CB88F6006C50CB /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8BC29CB88F6006C50CB /* StorageManager.swift */; };
 		EC19D8BF29CB8908006C50CB /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8BE29CB8908006C50CB /* AnalyticsManager.swift */; };
 		EC19D8C129CB8916006C50CB /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C029CB8916006C50CB /* HapticsManager.swift */; };
+		EC19D8C329CCC268006C50CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC19D8C229CCC268006C50CB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		EC19D8BC29CB88F6006C50CB /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		EC19D8BE29CB8908006C50CB /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		EC19D8C029CB8916006C50CB /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		EC19D8C229CCC268006C50CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		EC19D89729CB85C0006C50CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC19D8C229CCC268006C50CB /* GoogleService-Info.plist */,
 				EC19D87E29CB815C006C50CB /* AppDelegate.swift */,
 				EC19D88029CB815C006C50CB /* SceneDelegate.swift */,
 				EC19D88729CB815D006C50CB /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 			files = (
 				EC19D88B29CB815D006C50CB /* LaunchScreen.storyboard in Resources */,
 				EC19D88829CB815D006C50CB /* Assets.xcassets in Resources */,
+				EC19D8C329CCC268006C50CB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
