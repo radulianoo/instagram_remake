@@ -21,7 +21,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //this is made programatically
         //we are cratign a new window and assign it to the root view controller
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = HomeViewController()
+        
+        if AuthManager.shared.isSignedIn {
+            //signed in UI
+            window.rootViewController = TabBarViewController()
+        }
+        else {
+            //present the authentication UI
+            let vc = SignInViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            window.rootViewController = navVC
+        }
+        
         //make it vizible and reaty for user interactions
         window.makeKeyAndVisible()
         //we are assigning the window to the window scene delegate
