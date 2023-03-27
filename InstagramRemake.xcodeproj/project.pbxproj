@@ -34,6 +34,9 @@
 		EC19D8BF29CB8908006C50CB /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8BE29CB8908006C50CB /* AnalyticsManager.swift */; };
 		EC19D8C129CB8916006C50CB /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C029CB8916006C50CB /* HapticsManager.swift */; };
 		EC19D8C329CCC268006C50CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC19D8C229CCC268006C50CB /* GoogleService-Info.plist */; };
+		EC19D8C529D1FE9B006C50CB /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C429D1FE9B006C50CB /* SignInHeaderView.swift */; };
+		EC19D8C729D2016A006C50CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C629D2016A006C50CB /* Extensions.swift */; };
+		EC19D8C929D20876006C50CB /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C829D20876006C50CB /* IGTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		EC19D8BE29CB8908006C50CB /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		EC19D8C029CB8916006C50CB /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		EC19D8C229CCC268006C50CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EC19D8C429D1FE9B006C50CB /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
+		EC19D8C629D2016A006C50CB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EC19D8C829D20876006C50CB /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				EC19D88929CB815D006C50CB /* LaunchScreen.storyboard */,
+				EC19D8C429D1FE9B006C50CB /* SignInHeaderView.swift */,
+				EC19D8C829D20876006C50CB /* IGTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 				EC19D87E29CB815C006C50CB /* AppDelegate.swift */,
 				EC19D88029CB815C006C50CB /* SceneDelegate.swift */,
 				EC19D88729CB815D006C50CB /* Assets.xcassets */,
+				EC19D8C629D2016A006C50CB /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -343,12 +352,15 @@
 				EC19D8A729CB8835006C50CB /* SignUpViewController.swift in Sources */,
 				EC19D8B129CB889C006C50CB /* User.swift in Sources */,
 				EC19D89E29CB87B7006C50CB /* NotificationsViewController.swift in Sources */,
+				EC19D8C529D1FE9B006C50CB /* SignInHeaderView.swift in Sources */,
 				EC19D8AF29CB8878006C50CB /* SettingsViewController.swift in Sources */,
+				EC19D8C929D20876006C50CB /* IGTextField.swift in Sources */,
 				EC19D8B529CB88B1006C50CB /* Relationship.swift in Sources */,
 				EC19D8B329CB88A4006C50CB /* Post.swift in Sources */,
 				EC19D8B929CB88DD006C50CB /* AuthManager.swift in Sources */,
 				EC19D8A529CB8825006C50CB /* SignInViewController.swift in Sources */,
 				EC19D8A029CB87C2006C50CB /* ProfileViewController.swift in Sources */,
+				EC19D8C729D2016A006C50CB /* Extensions.swift in Sources */,
 				EC19D87F29CB815C006C50CB /* AppDelegate.swift in Sources */,
 				EC19D8C129CB8916006C50CB /* HapticsManager.swift in Sources */,
 				EC19D8BB29CB88EA006C50CB /* DatabaseManager.swift in Sources */,
