@@ -16,6 +16,7 @@ class IGTextField: UITextField {
         layer.cornerRadius = 8
         layer.borderWidth = 1
         backgroundColor = .secondarySystemBackground
+        autocapitalizationType = .none
         layer.borderColor = UIColor.secondaryLabel.cgColor
     }
     

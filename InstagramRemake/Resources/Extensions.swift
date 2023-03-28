@@ -35,3 +35,15 @@ extension UIView {
     }
     
 }
+
+// extension to leverage on codable when writing data on the database, no to create the redundant dictionary
+//what is encodable it will be converted in a dictionary
+extension Encodable {
+    func asDictionary() -> [String: Any]? {
+        guard let data = try? JSONEncoder().encode(self) else {
+            return nil
+        }
+        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+        return json
+    }
+}
