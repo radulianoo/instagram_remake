@@ -36,6 +36,18 @@ extension UIView {
     
 }
 
+extension Decodable {
+    init?(with dictionary: [String: Any]) {
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted) else {
+            return nil
+        }
+        guard let result = try? JSONDecoder().decode(Self.self, from:  data) else {
+            return nil
+        }
+        self = result
+    }
+}
+
 // extension to leverage on codable when writing data on the database, no to create the redundant dictionary
 //what is encodable it will be converted in a dictionary
 extension Encodable {
@@ -47,3 +59,5 @@ extension Encodable {
         return json
     }
 }
+
+
