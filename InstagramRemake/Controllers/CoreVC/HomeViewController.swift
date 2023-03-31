@@ -53,7 +53,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return viewModels[section].count
     }
     
-    let colors: [UIColor] = [.red, .blue, .green, .cyan, .magenta, .orange]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellType = viewModels[indexPath.section][indexPath.row]
@@ -71,7 +70,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollectionViewCell.identifier, for: indexPath) as? PostCollectionViewCell else {
                 fatalError()
             }
-            cell.contentView.backgroundColor = colors[indexPath.row]
             cell.configure(with: viewModel)
             return cell
             
@@ -79,7 +77,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostActionsCollectionViewCell.identifier, for: indexPath) as? PostActionsCollectionViewCell else {
                 fatalError()
             }
-            cell.contentView.backgroundColor = colors[indexPath.row]
             cell.configure(with: viewModel)
             return cell
             
@@ -87,7 +84,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostLikesCollectionViewCell.identifier, for: indexPath) as? PostLikesCollectionViewCell else {
                 fatalError()
             }
-            cell.contentView.backgroundColor = colors[indexPath.row]
             cell.configure(with: viewModel)
             return cell
             
@@ -95,7 +91,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCaptionsCollectionViewCell.identifier, for: indexPath) as? PostCaptionsCollectionViewCell else {
                 fatalError()
             }
-            cell.contentView.backgroundColor = colors[indexPath.row]
             cell.configure(with: viewModel)
             return cell
             
@@ -103,7 +98,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostDateTimeCollectionViewCell.identifier, for: indexPath) as? PostDateTimeCollectionViewCell else {
                 fatalError()
             }
-            cell.contentView.backgroundColor = colors[indexPath.row]
             cell.configure(with: viewModel)
             return cell
         }
