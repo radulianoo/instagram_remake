@@ -37,6 +37,13 @@
 		EC19D8C529D1FE9B006C50CB /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C429D1FE9B006C50CB /* SignInHeaderView.swift */; };
 		EC19D8C729D2016A006C50CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C629D2016A006C50CB /* Extensions.swift */; };
 		EC19D8C929D20876006C50CB /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19D8C829D20876006C50CB /* IGTextField.swift */; };
+		EC30E75929D6E66A000636ED /* PosterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30E75829D6E66A000636ED /* PosterCollectionViewCellViewModel.swift */; };
+		EC30E75B29D6E6BA000636ED /* PostCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30E75A29D6E6BA000636ED /* PostCollectionViewCellViewModel.swift */; };
+		EC30E75D29D6EF2F000636ED /* PostActionsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30E75C29D6EF2F000636ED /* PostActionsCollectionViewCellViewModel.swift */; };
+		EC30E75F29D6EF84000636ED /* PostLikesCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30E75E29D6EF84000636ED /* PostLikesCollectionViewCellViewModel.swift */; };
+		EC30E76129D6F000000636ED /* PostCaptionCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30E76029D6F000000636ED /* PostCaptionCollectionViewCellViewModel.swift */; };
+		EC30E76329D6F0F2000636ED /* PostDateTimeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30E76229D6F0F2000636ED /* PostDateTimeCollectionViewCellViewModel.swift */; };
+		EC30E76529D6F1E6000636ED /* HomeFeedCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30E76429D6F1E6000636ED /* HomeFeedCellType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +81,13 @@
 		EC19D8C429D1FE9B006C50CB /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
 		EC19D8C629D2016A006C50CB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EC19D8C829D20876006C50CB /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
+		EC30E75829D6E66A000636ED /* PosterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EC30E75A29D6E6BA000636ED /* PostCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EC30E75C29D6EF2F000636ED /* PostActionsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EC30E75E29D6EF84000636ED /* PostLikesCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikesCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EC30E76029D6F000000636ED /* PostCaptionCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EC30E76229D6F0F2000636ED /* PostDateTimeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDateTimeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EC30E76429D6F1E6000636ED /* HomeFeedCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCellType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +184,13 @@
 		EC19D89529CB85B1006C50CB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EC30E75829D6E66A000636ED /* PosterCollectionViewCellViewModel.swift */,
+				EC30E75A29D6E6BA000636ED /* PostCollectionViewCellViewModel.swift */,
+				EC30E75C29D6EF2F000636ED /* PostActionsCollectionViewCellViewModel.swift */,
+				EC30E75E29D6EF84000636ED /* PostLikesCollectionViewCellViewModel.swift */,
+				EC30E76029D6F000000636ED /* PostCaptionCollectionViewCellViewModel.swift */,
+				EC30E76229D6F0F2000636ED /* PostDateTimeCollectionViewCellViewModel.swift */,
+				EC30E76429D6F1E6000636ED /* HomeFeedCellType.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -350,17 +371,24 @@
 				EC19D8BF29CB8908006C50CB /* AnalyticsManager.swift in Sources */,
 				EC19D8BD29CB88F6006C50CB /* StorageManager.swift in Sources */,
 				EC19D8A729CB8835006C50CB /* SignUpViewController.swift in Sources */,
+				EC30E75929D6E66A000636ED /* PosterCollectionViewCellViewModel.swift in Sources */,
 				EC19D8B129CB889C006C50CB /* User.swift in Sources */,
 				EC19D89E29CB87B7006C50CB /* NotificationsViewController.swift in Sources */,
+				EC30E76329D6F0F2000636ED /* PostDateTimeCollectionViewCellViewModel.swift in Sources */,
 				EC19D8C529D1FE9B006C50CB /* SignInHeaderView.swift in Sources */,
 				EC19D8AF29CB8878006C50CB /* SettingsViewController.swift in Sources */,
 				EC19D8C929D20876006C50CB /* IGTextField.swift in Sources */,
+				EC30E75B29D6E6BA000636ED /* PostCollectionViewCellViewModel.swift in Sources */,
+				EC30E76529D6F1E6000636ED /* HomeFeedCellType.swift in Sources */,
+				EC30E75F29D6EF84000636ED /* PostLikesCollectionViewCellViewModel.swift in Sources */,
 				EC19D8B529CB88B1006C50CB /* Relationship.swift in Sources */,
 				EC19D8B329CB88A4006C50CB /* Post.swift in Sources */,
 				EC19D8B929CB88DD006C50CB /* AuthManager.swift in Sources */,
+				EC30E76129D6F000000636ED /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
 				EC19D8A529CB8825006C50CB /* SignInViewController.swift in Sources */,
 				EC19D8A029CB87C2006C50CB /* ProfileViewController.swift in Sources */,
 				EC19D8C729D2016A006C50CB /* Extensions.swift in Sources */,
+				EC30E75D29D6EF2F000636ED /* PostActionsCollectionViewCellViewModel.swift in Sources */,
 				EC19D87F29CB815C006C50CB /* AppDelegate.swift in Sources */,
 				EC19D8C129CB8916006C50CB /* HapticsManager.swift in Sources */,
 				EC19D8BB29CB88EA006C50CB /* DatabaseManager.swift in Sources */,

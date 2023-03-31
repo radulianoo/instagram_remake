@@ -12,6 +12,8 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     private var collectionView: UICollectionView?
+    private var viewModels = [[HomeFeedCellType]]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +21,67 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         title = "Home"
         
         configureCollectionView()
+        fetchPosts()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
     }
+    
+    private func fetchPosts() {
+        //mock data
+        let postData: [HomeFeedCellType] = [
+            .poster(viewModel: PosterCollectionViewCellViewModel(username: "Octav", profilePictureURL: URL(string: "https://www.apple.com")!)),
+            .post(viewModel: PostCollectionViewCellViewModel(postURL: URL(string: "https://www.apple.com")!)),
+            .actions(viewModel: PostActionsCollectionViewCellViewModel(isLiked: true)),
+            .likeCount(viewModel: PostLikesCollectionViewCellViewModel(likers: ["NicoletteOshea"])),
+            .caption(viewModel: PostCaptionCollectionViewCellViewModel(username: "Octav", caption: "This is awsome post")),
+            .timestamp(viewModel: PostDateTimeCollectionViewCellViewModel(date: Date()))
+        ]
+        viewModels.append(postData)
+        collectionView?.reloadData()
+    }
+    
+    //MARK: - CollectionView Delegate & DataSource
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModels.count
+    }
+    //one cell for the header , one for the post , one for the like etc
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+    
+    let colors: [UIColor] = [.red, .blue, .green, .cyan, .magenta, .orange]
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellType = viewModels[indexPath.section][indexPath.row]
+        
+        switch cellType {
+            
+        case .poster(viewModel: let viewModel):
+            break
+        case .post(viewModel: let viewModel):
+            break
+        case .actions(viewModel: let viewModel):
+            break
+        case .likeCount(viewModel: let viewModel):
+            break
+        case .caption(viewModel: let viewModel):
+            break
+        case .timestamp(viewModel: let viewModel):
+            break
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.contentView.backgroundColor = colors[indexPath.row]
+        return cell
+    }
+    
+}
+
+extension HomeViewController {
     
     func configureCollectionView() {
         let sectionHeight: CGFloat = 240 + view.width
@@ -70,24 +127,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                 forCellWithReuseIdentifier: "cell")
         
         self.collectionView = collectionView
-    }
-
-    //MARK: - CollectionView Delegate & DataSource
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
-    }
-    //one cell for the header , one for the post , one for the like etc
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    let colors: [UIColor] = [.red, .blue, .green, .cyan, .magenta, .orange]
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = colors[indexPath.row]
-        return cell
     }
     
 }
