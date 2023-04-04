@@ -7,9 +7,21 @@
 import SDWebImage
 import UIKit
 
+//on a tap we are sending to the XVC
+//we add a protocol for this in order to set up the delegate design pattern
+
+protocol PosterCollectionViewCellDelegate: AnyObject {
+    //is AnyObject because we can put weak on the delegate property
+    func posterCollectionViewCellDidTapMore(_ cell: PosterCollectionViewCell)
+    func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell)
+}
+
 final class PosterCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "PosterCollectionViewCell"
+    
+    //add the delegate property, is weak because we don't want to create a memory leak
+    weak var delegate: PosterCollectionViewCellDelegate?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -40,6 +52,10 @@ final class PosterCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(usernameLabel)
         contentView.addSubview(moreButton)
         moreButton.addTarget(self, action: #selector(didTapMore), for: .touchUpInside)
+        //add the gesture recognizer
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapUsername))
+        usernameLabel.isUserInteractionEnabled = true
+        usernameLabel.addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
@@ -70,8 +86,12 @@ final class PosterCollectionViewCell: UICollectionViewCell {
         imageView.sd_setImage(with: viewModel.profilePictureURL, completed: nil)
     }
     
+    @objc func didTapUsername() {
+        delegate?.posterCollectionViewCellDidTapUsername(self)
+    }
+    
     @objc func didTapMore() {
-        
+        delegate?.posterCollectionViewCellDidTapMore(self)
     }
     
 }
