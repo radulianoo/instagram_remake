@@ -35,7 +35,9 @@ class TabBarViewController: UITabBarController {
         let nav3 = UINavigationController(rootViewController: camera)
         let nav4 = UINavigationController(rootViewController: activity)
         let nav5 = UINavigationController(rootViewController: settings)
-        
+      
+        nav3.navigationItem.backButtonDisplayMode = .minimal
+      
         //todo for loop
         nav1.navigationBar.tintColor = .label
         nav2.navigationBar.tintColor = .label

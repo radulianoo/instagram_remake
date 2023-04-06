@@ -50,6 +50,7 @@
 		EC44D5B529D7136D00F56E97 /* PostLikesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D5B429D7136D00F56E97 /* PostLikesCollectionViewCell.swift */; };
 		EC44D5B729D713C200F56E97 /* PostCaptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D5B629D713C200F56E97 /* PostCaptionsCollectionViewCell.swift */; };
 		EC44D5B929D713F300F56E97 /* PostDateTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D5B829D713F300F56E97 /* PostDateTimeCollectionViewCell.swift */; };
+		EC5A8BA829DF364600622A64 /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5A8BA729DF364600622A64 /* PostEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		EC44D5B429D7136D00F56E97 /* PostLikesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC44D5B629D713C200F56E97 /* PostCaptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC44D5B829D713F300F56E97 /* PostDateTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDateTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC5A8BA729DF364600622A64 /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 				EC19D8AA29CB8861006C50CB /* ListViewController.swift */,
 				EC19D8AC29CB886C006C50CB /* PostViewController.swift */,
 				EC19D8AE29CB8878006C50CB /* SettingsViewController.swift */,
+				EC5A8BA729DF364600622A64 /* PostEditViewController.swift */,
 			);
 			path = OtherVC;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				EC30E76529D6F1E6000636ED /* HomeFeedCellType.swift in Sources */,
 				EC30E75F29D6EF84000636ED /* PostLikesCollectionViewCellViewModel.swift in Sources */,
 				EC19D8B529CB88B1006C50CB /* Relationship.swift in Sources */,
+				EC5A8BA829DF364600622A64 /* PostEditViewController.swift in Sources */,
 				EC19D8B329CB88A4006C50CB /* Post.swift in Sources */,
 				EC19D8B929CB88DD006C50CB /* AuthManager.swift in Sources */,
 				EC30E76129D6F000000636ED /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
@@ -571,6 +575,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +607,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

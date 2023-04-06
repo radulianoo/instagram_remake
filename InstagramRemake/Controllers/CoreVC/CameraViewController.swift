@@ -11,17 +11,32 @@ import AVFoundation
 //open camera and take photo -> import AVFoundation
 
 class CameraViewController: UIViewController {
-
+    
     private var output = AVCapturePhotoOutput()
     private var captureSession: AVCaptureSession?
     private let previewLayer = AVCaptureVideoPreviewLayer()
     
+    private let cameraView = UIView()
+    
+    //in order to take a photo we need to add a button and call
+    private let shutterButton: UIButton = {
+        let button = UIButton()
+        button.layer.masksToBounds = true
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.label.cgColor
+        button.backgroundColor = nil
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .secondarySystemBackground
         title = "Take Photo"
+        view.addSubview(cameraView)
+        view.addSubview(shutterButton)
         setUpNavBar()
         checkCameraPermission()
+        shutterButton.addTarget(self, action: #selector(didTapTakePhoto), for: .touchUpInside)
     }
     
     //hide the tabBar to have a cleaner UI
@@ -36,11 +51,16 @@ class CameraViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        cameraView.frame = view.bounds
         previewLayer.frame = CGRect(x: 0,
                                     y: view.safeAreaInsets.top,
                                     width: view.width,
                                     height: view.width)
+        let buttonSize: CGFloat = view.width/5
+        shutterButton.frame = CGRect(x: (view.width - buttonSize)/2, y: view.safeAreaInsets.top + view.width + 100, width: buttonSize, height: buttonSize)
+        shutterButton.layer.cornerRadius = buttonSize/2
     }
+    
     
     //in order not to use the battery (camera is still working on background)
     override func viewDidDisappear(_ animated: Bool) {
@@ -68,7 +88,7 @@ class CameraViewController: UIViewController {
         @unknown default:
             break
         }
-
+        
     }
     
     private func setUpCamera() {
@@ -94,14 +114,14 @@ class CameraViewController: UIViewController {
             
             previewLayer.session = captureSession
             previewLayer.videoGravity = .resizeAspectFill
-            
-            view.layer.addSublayer(previewLayer)
+            cameraView.layer.addSublayer(previewLayer)
+            //view.layer.addSublayer(previewLayer)
             
             
             captureSession.startRunning()
             
         }
-
+        
     }
     
     private func setUpNavBar() {
@@ -119,6 +139,30 @@ class CameraViewController: UIViewController {
         tabBarController?.selectedIndex = 0
         tabBarController?.tabBar.isHidden = false
         
+    }
+    
+    @objc func didTapTakePhoto() {
+        output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+    }
+    
+}
+
+
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    //capturing photo
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let data = photo.fileDataRepresentation() else {
+            return
+        }
+        //stop the capture
+        captureSession?.stopRunning()
+        //converting data into a image
+        guard let image = UIImage(data: data) else {
+            return
+        }
+       
+        let vc = PostEditViewController(image: image)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
 }
