@@ -51,6 +51,7 @@
 		EC44D5B729D713C200F56E97 /* PostCaptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D5B629D713C200F56E97 /* PostCaptionsCollectionViewCell.swift */; };
 		EC44D5B929D713F300F56E97 /* PostDateTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44D5B829D713F300F56E97 /* PostDateTimeCollectionViewCell.swift */; };
 		EC5A8BA829DF364600622A64 /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5A8BA729DF364600622A64 /* PostEditViewController.swift */; };
+		EC5A8BAA29DF3FC300622A64 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5A8BA929DF3FC300622A64 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		EC44D5B629D713C200F56E97 /* PostCaptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC44D5B829D713F300F56E97 /* PostDateTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDateTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC5A8BA729DF364600622A64 /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
+		EC5A8BA929DF3FC300622A64 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				EC19D88929CB815D006C50CB /* LaunchScreen.storyboard */,
 				EC19D8C429D1FE9B006C50CB /* SignInHeaderView.swift */,
 				EC19D8C829D20876006C50CB /* IGTextField.swift */,
+				EC5A8BA929DF3FC300622A64 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				EC19D8C729D2016A006C50CB /* Extensions.swift in Sources */,
 				EC44D5B929D713F300F56E97 /* PostDateTimeCollectionViewCell.swift in Sources */,
 				EC30E75D29D6EF2F000636ED /* PostActionsCollectionViewCellViewModel.swift in Sources */,
+				EC5A8BAA29DF3FC300622A64 /* PhotoCollectionViewCell.swift in Sources */,
 				EC19D87F29CB815C006C50CB /* AppDelegate.swift in Sources */,
 				EC19D8C129CB8916006C50CB /* HapticsManager.swift in Sources */,
 				EC44D5AF29D7116C00F56E97 /* PosterCollectionViewCell.swift in Sources */,
