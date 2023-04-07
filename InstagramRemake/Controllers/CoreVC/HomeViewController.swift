@@ -30,17 +30,77 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     private func fetchPosts() {
+        guard let username = UserDefaults.standard.string(forKey: "username") else { return }
+        DatabaseManager.shared.post(for: username) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let posts):
+                    //print("\n\n\n Posts: \(posts.count)")
+                    let group = DispatchGroup()
+                    posts.forEach { model in
+                        group.enter()
+                        self?.createViewModel(model: model, username: username, completion: { success in
+                            defer {
+                                group.leave()
+                            }
+                            if !success {
+                                print("failed to create VM")
+                            }
+                        })
+                    }
+                    group.notify(queue: .main) {
+                        self?.collectionView?.reloadData()
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    private func createViewModel(model: Post, username: String, completion: @escaping (Bool) -> Void) {
         //mock data
-        let postData: [HomeFeedCellType] = [
-            .poster(viewModel: PosterCollectionViewCellViewModel(username: "Octav", profilePictureURL: URL(string: "https://images.unsplash.com/profile-1674906760257-dad1baa28b74?dpr=1&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff")!)),
-            .post(viewModel: PostCollectionViewCellViewModel(postURL: URL(string: "https://www.usnews.com/object/image/00000186-7a58-d975-aff7-fffbc8910000/iguazu-falls-stock.jpg?update-time=1677089883729&size=responsive970")!)),
-            .actions(viewModel: PostActionsCollectionViewCellViewModel(isLiked: true)),
-            .likeCount(viewModel: PostLikesCollectionViewCellViewModel(likers: ["NicoletteOshea"])),
-            .caption(viewModel: PostCaptionCollectionViewCellViewModel(username: "Octav", caption: "This is awsome post")),
-            .timestamp(viewModel: PostDateTimeCollectionViewCellViewModel(date: Date()))
-        ]
-        viewModels.append(postData)
-        collectionView?.reloadData()
+        let group = DispatchGroup()
+        group.enter()
+        group.enter()
+
+        var postUrl: URL?
+        var profilePictureURL: URL?
+        
+        StorageManager.shared.downloadURL(for: model) { url in
+            defer {
+                group.leave()
+            }
+            postUrl = url
+        }
+        StorageManager.shared.profilePictureURL(for: username) { url in
+            
+            defer {
+                group.leave()
+            }
+            
+            profilePictureURL = url
+        }
+        
+        group.notify(queue: .main) {
+            guard let postUrl = postUrl, let profilePictureURL = profilePictureURL else {
+                return
+            }
+            
+            let postData: [HomeFeedCellType] = [
+                .poster(viewModel: PosterCollectionViewCellViewModel(username: username, profilePictureURL: profilePictureURL)),
+                .post(viewModel: PostCollectionViewCellViewModel(postURL: postUrl)),
+                .actions(viewModel: PostActionsCollectionViewCellViewModel(isLiked: false)),
+                .likeCount(viewModel: PostLikesCollectionViewCellViewModel(likers: [])),
+                .caption(viewModel: PostCaptionCollectionViewCellViewModel(username: username, caption: model.caption)),
+                .timestamp(viewModel: PostDateTimeCollectionViewCellViewModel(date: DateFormatter.formatter.date(from: model.postedDate) ?? Date()))
+            ]
+            self.viewModels.append(postData)
+            completion(true)
+        }
+        
+        
     }
     
     //MARK: - CollectionView Delegate & DataSource
